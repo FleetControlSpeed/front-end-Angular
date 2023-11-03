@@ -6,13 +6,15 @@ import { NavComponent } from './components/nav/nav.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 import { ListarUsuarioComponent } from './pages/listar-usuario/listar-usuario.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     CadastrarUsuarioComponent,
-    ListarUsuarioComponent
+    ListarUsuarioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
