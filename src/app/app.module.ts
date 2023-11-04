@@ -8,6 +8,7 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
 import { ListarUsuarioComponent } from './pages/listar-usuario/listar-usuario.component';
 import { LoginComponent } from './components/login/login.component';
 import { CadastrarVeiculoComponent } from './pages/cadastrar-veiculo/cadastrar-veiculo.component';
+import { CadastrarMultaComponent } from './pages/cadastrar-multa/cadastrar-multa.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CadastrarVeiculoComponent } from './pages/cadastrar-veiculo/cadastrar-v
     CadastrarUsuarioComponent,
     ListarUsuarioComponent,
     LoginComponent,
-    CadastrarVeiculoComponent
+    CadastrarVeiculoComponent,
+    CadastrarMultaComponent
   ],
   imports: [
     BrowserModule,
