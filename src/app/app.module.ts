@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 import { ListarUsuarioComponent } from './pages/listar-usuario/listar-usuario.component';
 import { LoginComponent } from './components/login/login.component';
+import { CadastrarVeiculoComponent } from './pages/cadastrar-veiculo/cadastrar-veiculo.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LoginComponent } from './components/login/login.component';
     NavComponent,
     CadastrarUsuarioComponent,
     ListarUsuarioComponent,
-    LoginComponent
+    LoginComponent,
+    CadastrarVeiculoComponent
   ],
   imports: [
     BrowserModule,
