@@ -1,1 +1,46 @@
-<p>cadastrar-multa works!</p>
+<app-nav></app-nav>
+<body class="w-full bg-slate-50">
+    <section class="flex justify-center">
+        
+        <form class="w-3/4 flex items-center flex-col mt-10 bg-white rounded-lg">
+            <div class="flex justify-center">
+                <p class="underline text-[#064F51] text-4xl flex justify-center mt-14">Cadastrar multa</p>
+            </div>
+            <div class="mb-6 mt-10 flex items-center justify-between">
+                <div class="mr-14">
+                    <label for="multa" class="block">TIPO</label>
+                    <input type="text" placeholder="EX:Velocidade" class="w-96 h-10 rounded-lg border p-4">
+                </div>
+                <div>
+                    <label for="valor" class="block">VALOR</label>
+                    <input type="text" placeholder="Digite o valor da multa" class="w-96 h-10 rounded-lg border p-4">
+                </div>
+            </div>
+
+            <div class="mb-6 mt-10 flex items-center justify-between">
+                <div class="mr-14">
+                    <label for="data-multa" class="block">DATA DA MULTA</label>
+                    <input type="date" placeholder="DD/MM/AA" class="w-96 h-10 rounded-lg border p-4">
+                </div>
+                <div>
+                    <label for="nascimento" class="block">ANEXO</label>
+                    <input type="file" placeholder="Anexo da multa" class="w-96 h-10 rounded-lg border p-1">
+                </div>
+            </div>
+
+            <div class="mb-6 mt-10 flex items-center justify-between">
+                <div class="mr-14">
+                    <label for="obs"class="block">OBSERVAÇÔES</label>
+                    <textarea name="obs" rows="4" cols="50" placeholder="OBSERVAÇÔES" class="w-96 h-32 rounded-lg border p-4"></textarea>
+                </div>
+
+            </div>
+
+            <div class="flex mt-14 mb-14">
+                <button type="button" class="bg-[#064F51] mr-96 w-32 h-8 rounded-lg text-white">Voltar</button>
+                <button type="button" class="bg-[#064F51] w-32 h-8 rounded-lg text-white">Cadastrar</button>
+            </div>
+
+        </form>
+    </section>
+</body>
