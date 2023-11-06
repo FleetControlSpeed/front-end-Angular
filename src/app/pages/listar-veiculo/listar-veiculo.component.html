@@ -1,0 +1,61 @@
+<app-nav> </app-nav>
+
+<section class="flex w-3/4 ml-48">
+  <section class="flex-col flex w-full items-end">
+    <section class="flex justify-between mt-14 mb-14">
+      <a href="/cadastrar-usuario">
+         <button
+            type="button"
+            class="focus:outline-none text-white bg-[#064F51] hover:bg-[#348789] focus:ring-4 focus:bg-[#064F51] font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  dark:hover:bg-[#348789] dark:focus:bg-[#054E50]"
+          >
+            + Cadastrar Veiculo
+          </button>
+        </a>
+     
+    </section>
+
+    <section class="w-full flex items-center">
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs dark:text-gray-400">
+          <tr>
+            <th scope="col" class="px-6 py-3">ID</th>
+            <th scope="col" class="px-6 py-3">NOME</th>
+            <th scope="col" class="px-6 py-3">PLACA</th>
+            <th scope="col" class="px-6 py-3">ANO</th>
+            <th scope="col" class="px-6 py-3">DATA DE CADASTRO</th>
+            <th scope="col" class="px-6 py-3">STATUS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="dark:border-gray-700" *ngFor="let veiculos of veiculo">
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black"
+            >
+             {{ veiculos.id}}
+            </th>
+            <td class="px-6 dark:text-black py-4">{{veiculos.modelo}}</td>
+            <td class="px-6 dark:text-black py-4">{{veiculos.placa}} </td>
+            <td class="px-6 dark:text-black py-4"> {{veiculos.ano}} </td>
+            <td class="px-6 dark:text-black py-4"> {{veiculos.edicao}} </td>
+            <td class="px-6 dark:text-black py-4">
+              <a
+                
+                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                ><button 
+                  [ngClass]="{
+                    'btn-ativo': veiculos.ativo,
+                    'btn-inativo': !veiculos.ativo
+                }"
+                 class="bg-transparent  text-[#064F51] font-semibold py-2 px-4 border border-[#064F51]  rounded">
+                    {{veiculos.ativo}}
+                  </button></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+</section>

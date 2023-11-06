@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CadastrarVeiculoComponent } from './pages/cadastrar-veiculo/cadastrar-veiculo.component';
 import { CadastrarMultaComponent } from './pages/cadastrar-multa/cadastrar-multa.component';
 import { ListarMultasComponent } from './pages/listar-multas/listar-multas.component';
+import { ListarVeiculoComponent } from './pages/listar-veiculo/listar-veiculo.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ListarMultasComponent } from './pages/listar-multas/listar-multas.compo
     LoginComponent,
     CadastrarVeiculoComponent,
     CadastrarMultaComponent,
-    ListarMultasComponent
+    ListarMultasComponent,
+    ListarVeiculoComponent
   ],
   imports: [
     BrowserModule,
