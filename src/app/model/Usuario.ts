@@ -10,7 +10,7 @@ export class Usuario extends Abs{
    sobrenome!:String
    cpf!:String
    telefone!:String
-   dataNacimento!:String
+   dataNascimento!:String
    
 
    constructor(){
