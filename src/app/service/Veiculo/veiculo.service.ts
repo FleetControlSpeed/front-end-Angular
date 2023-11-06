@@ -1,15 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Empresa } from 'src/app/model/Empresa';
+import { Veiculo } from 'src/app/model/Veiculo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VeiculoService {
   private baseUrl = 'http://localhost:8080/api/veiculo'; 
+  http = inject(HttpClient)
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   listar(): Observable<any[]> {
     const url = `${this.baseUrl}/listar`;
@@ -25,9 +27,8 @@ export class VeiculoService {
     return this.http.get<any>(url);
   }
 
-  adicionar(Veiculo: any): Observable<any> {
-    const url = `${this.baseUrl}/cadastrar`;
-    return this.http.post(url, Veiculo);
+  adicionar(veiculo: Veiculo): Observable<Veiculo> {
+    return this.http.post<Veiculo>(`${this.baseUrl}/cadastrar`, veiculo);
   }
 
   atualizar(id: number, Veiculo: any): Observable<any> {

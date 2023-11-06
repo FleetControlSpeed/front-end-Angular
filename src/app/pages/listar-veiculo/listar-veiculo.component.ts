@@ -19,7 +19,7 @@ export class ListarVeiculoComponent {
         this.veiculo = lista;
       },
       (erro)=>{
-        alert('Erro Inesperado');
+        alert('Nenhum veiculo encontrado em nossa base de dados!');
         console.error(erro);
       }
     )

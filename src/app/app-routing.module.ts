@@ -14,7 +14,7 @@ import { ListarVeiculoComponent } from './pages/listar-veiculo/listar-veiculo.co
 const routes: Routes = [
   {path:"", component:LoginComponent},
   {path:"nav",component: NavComponent },
-  {path:"cadastrar-usuario",component: ListarUsuarioComponent},
+  {path:"listar-usuario",component: ListarUsuarioComponent},
   {path:"cadastrar-usuario", component: CadastrarUsuarioComponent},
   {path:"cadastrar-veiculo", component:CadastrarVeiculoComponent},
   {path:"cadastrar-multa",component:CadastrarMultaComponent},

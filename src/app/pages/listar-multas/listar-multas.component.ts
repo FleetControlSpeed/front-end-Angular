@@ -19,7 +19,7 @@ export class ListarMultasComponent {
         this.multas = lista;
       },
       (erro)=>{
-        alert('Erro Inesperado');
+        alert('Nenhuma multa encontrada em nossa base de dados!');
         console.error(erro);
       }
     )

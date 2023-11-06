@@ -34,21 +34,39 @@
                     <input type="text" placeholder="km" class="w-96 h-10 rounded-lg border p-4">
                 </div>
                 <div>
-                    <label for="tipo"class="block">TIPO</label>
-                    <input type="button" value="selecione o tipo de veiculo" class="w-96 h-10 rounded-lg border p-4">
+                    <label for="cor"class="block">Cor</label>
+                    <select  value="cor"class="w-96 h-10 rounded-lg border p-4">
+                        <option value="0">Escolha</option>
+                        <option value="AMARELO">AMARELO</option>
+                        <option value="BEGE">BEGE</option>
+                        <option value="BRANCA">BRANCA</option>
+                        <option value="CINZA">CINZA</option>
+                        <option value="MARROM">MARROM</option>
+                        <option value="AZUL">AZUL</option>
+                        <option value="PRATA">PRATA</option>
+                        <option value="PRETA">PRETA</option>
+                        <option value="VERDE">VERDE</option>
+                        <option value="VERMELHO">VERMELHO</option>
+                    </select>
                 </div>
             </div>
 
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
-                    <label for="Digite seu EMAIL"class="block">COR</label>
-                    <input type="color" class="w-52 h-14 rounded-lg border p-4">
+                    <label for="Tipo"class="block">Tipo</label>
+                    <select class="w-52 h-14 rounded-lg border p-4"> 
+                        <option value="0">Escolha</option>
+                        <option value="CARRO">CARRO</option>
+                        <option value="VAN">VAN</option>
+                        <option value="CAMINHAO">CAMINHAO</option>
+                       
+                    </select>
                 </div>
 
             </div>
             <div class="flex mt-14 mb-14">
                <a href="listar-veiculo"><button type="button" class="bg-[#064F51] mr-96 w-32 h-8 rounded-lg text-white">Voltar</button></a>
-                <button type="button" class="bg-[#064F51] w-32 h-8 rounded-lg text-white">Cadastrar</button>
+                <button type="button" class="bg-[#064F51] w-32 h-8 rounded-lg text-white" (click)="adicionarVeiculo()">Cadastrar</button>
             </div>
 
         </form>

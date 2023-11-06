@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Empresa } from 'src/app/model/Empresa';
+import { Usuario } from 'src/app/model/Usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +26,9 @@ export class UsuarioService {
     return this.http.get<any>(url);
   }
 
-  adicionar(Usuario: any): Observable<any> {
+  adicionar(usuario: Usuario): Observable<any> {
     const url = `${this.baseUrl}/cadastrar`;
-    return this.http.post(url, Usuario);
+    return this.http.post(url, usuario);
   }
 
   atualizar(id: number, Usuario: any): Observable<any> {

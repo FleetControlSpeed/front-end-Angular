@@ -19,7 +19,7 @@ export class ListarUsuarioComponent {
         this.usuarios = lista;
       },
       error:(erro)=>{
-        alert('Erro inesperado')
+        alert('Nenhum usuario encontrado em nossa base de dados!')
         console.error(erro);
       }
     })
