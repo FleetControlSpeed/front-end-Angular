@@ -9,19 +9,22 @@ import { CadastrarMultaComponent } from './pages/cadastrar-multa/cadastrar-multa
 import { ListarMultasComponent } from './pages/listar-multas/listar-multas.component';
 import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
 import { ListarVeiculoComponent } from './pages/listar-veiculo/listar-veiculo.component';
+import { CadastarModeloComponent } from './pages/cadastar-modelo/cadastar-modelo.component';
 
 
 const routes: Routes = [
   {path:"", component:LoginComponent},
   {path:"nav",component: NavComponent },
-  {path:"listar-usuario",component: ListarUsuarioComponent},
+
   {path:"cadastrar-usuario", component: CadastrarUsuarioComponent},
   {path:"cadastrar-veiculo", component:CadastrarVeiculoComponent},
   {path:"cadastrar-multa",component:CadastrarMultaComponent},
+  {path:"cadastar-modelo",component:CadastarModeloComponent},
+  
+  {path:"listar-usuario",component: ListarUsuarioComponent},
   {path:"lista-multa", component:ListarMultasComponent},
   {path:"lista-veiculo",component:ListarVeiculoComponent},
   {path:"recuperar-senha",component:RecuperarSenhaComponent}
-
 ];
 
 @NgModule({
