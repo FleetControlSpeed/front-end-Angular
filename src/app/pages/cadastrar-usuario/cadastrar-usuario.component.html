@@ -2,56 +2,56 @@
 <body class="w-full bg-slate-50">
     <section class="flex justify-center">
         
-        <form class="w-3/4 flex items-center flex-col mt-10 bg-white rounded-lg">
+        <form class="w-3/4 flex items-center flex-col mt-10 bg-white rounded-lg" (ngSubmit)="adicionarUsuario()">
             <div class="flex justify-center">
                 <p class="underline text-[#064F51] text-4xl flex justify-center mt-14">Cadastrar Usuário</p>
             </div>
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="nome" class="block">NOME</label>
-                    <input type="text" placeholder="Digite Seu nome" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="text" [(ngModel)]="usuario.primeiroNome" placeholder="Digite Seu nome" class="w-96 h-10 rounded-lg border p-4">
                 </div>
                 <div>
                     <label for="sobrenome" class="block">SOBRENOME</label>
-                    <input type="text" placeholder="Digite seu sobrenome" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="text" [(ngModel)]="usuario.sobrenome" placeholder="Digite seu sobrenome" class="w-96 h-10 rounded-lg border p-4">
                 </div>
             </div>
 
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="CPF" class="block">CPF</label>
-                    <input type="text" placeholder="Digite seu CPF" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="text" [(ngModel)]="usuario.cpf" placeholder="Digite seu CPF" class="w-96 h-10 rounded-lg border p-4">
                 </div>
                 <div>
                     <label for="nascimento" class="block">DATA DE NASCIMENTO</label>
-                    <input type="date" placeholder="DD/MM/AA" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="date" [(ngModel)]="usuario.dataNacimento" placeholder="DD/MM/AA" class="w-96 h-10 rounded-lg border p-4">
                 </div>
             </div>
 
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="telefone"class="block">CEL</label>
-                    <input type="tel" placeholder="XX X XXXX-XXXX" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="tel" [(ngModel)]="usuario.telefone" placeholder="XX X XXXX-XXXX" class="w-96 h-10 rounded-lg border p-4">
                 </div>
                 <div>
                     <label for="CNH"class="block">CNH</label>
-                    <input type="text" placeholder="Digite sua CNH" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="text" [(ngModel)]="usuario.cnh" placeholder="Digite sua CNH" class="w-96 h-10 rounded-lg border p-4">
                 </div>
             </div>
 
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="EMAIL"class="block">EMAIL</label>
-                    <input type="email" placeholder="Digite seu email" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="email" [(ngModel)]="usuario.email" placeholder="Digite seu email" class="w-96 h-10 rounded-lg border p-4">
                 </div>
                 <div>
                     <label for="senha"class="block">SENHA</label>
-                    <input type="password" placeholder="Digite sua senha" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="password" [(ngModel)]="usuario.senha" placeholder="Digite sua senha" class="w-96 h-10 rounded-lg border p-4">
                 </div>
             </div>
             <div class="flex mt-14 mb-14">
                 <a href="listar-usuario"><button type="button" class="bg-[#064F51] mr-96 w-32 h-8 rounded-lg text-white">Voltar</button></a>
-                <button type="button" class="bg-[#064F51] w-32 h-8 rounded-lg text-white">Cadastrar</button>
+                <button type="submit" class="bg-[#064F51] w-32 h-8 rounded-lg text-white">Cadastrar</button>
             </div>
 
         </form>

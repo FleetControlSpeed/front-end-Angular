@@ -8,16 +8,18 @@ import { CadastrarVeiculoComponent } from './pages/cadastrar-veiculo/cadastrar-v
 import { CadastrarMultaComponent } from './pages/cadastrar-multa/cadastrar-multa.component';
 import { ListarMultasComponent } from './pages/listar-multas/listar-multas.component';
 import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
+import { ListarVeiculoComponent } from './pages/listar-veiculo/listar-veiculo.component';
 
 
 const routes: Routes = [
   {path:"", component:LoginComponent},
   {path:"nav",component: NavComponent },
-  {path:"listar-usuario",component: ListarUsuarioComponent},
+  {path:"usuario",component: ListarUsuarioComponent},
   {path:"cadastrar-usuario", component: CadastrarUsuarioComponent},
   {path:"cadastrar-veiculo", component:CadastrarVeiculoComponent},
   {path:"cadastrar-multa",component:CadastrarMultaComponent},
   {path:"lista-multa", component:ListarMultasComponent},
+  {path:"lista-veiculo",component:ListarVeiculoComponent},
   {path:"recuperar-senha",component:RecuperarSenhaComponent}
 
 ];

@@ -12,6 +12,7 @@ import { CadastrarMultaComponent } from './pages/cadastrar-multa/cadastrar-multa
 import { ListarMultasComponent } from './pages/listar-multas/listar-multas.component';
 import { ListarVeiculoComponent } from './pages/listar-veiculo/listar-veiculo.component';
 import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
