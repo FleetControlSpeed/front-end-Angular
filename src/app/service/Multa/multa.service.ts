@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Empresa } from 'src/app/model/Empresa';
@@ -8,8 +8,9 @@ import { Empresa } from 'src/app/model/Empresa';
 })
 export class MultaService {
   private baseUrl = 'http://localhost:8080/api/multa'; 
+  http = inject(HttpClient)
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   listar(): Observable<any[]> {
     const url = `${this.baseUrl}/listar`;

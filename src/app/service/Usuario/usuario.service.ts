@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Empresa } from 'src/app/model/Empresa';
@@ -8,9 +8,10 @@ import { Usuario } from 'src/app/model/Usuario';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private baseUrl = 'http://localhost:8080/api/condutores'; 
+  baseUrl : string = 'http://localhost:8080/api/condutores'; 
+  http = inject(HttpClient)
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   listar(): Observable<any[]> {
     const url = `${this.baseUrl}/listar`;
@@ -26,9 +27,9 @@ export class UsuarioService {
     return this.http.get<any>(url);
   }
 
-  adicionar(usuario: Usuario): Observable<any> {
+  adicionar(usuario: Usuario): Observable<Usuario> {
     const url = `${this.baseUrl}/cadastrar`;
-    return this.http.post(url, usuario);
+    return this.http.post<Usuario>(url, usuario);
   }
 
   atualizar(id: number, Usuario: any): Observable<any> {
