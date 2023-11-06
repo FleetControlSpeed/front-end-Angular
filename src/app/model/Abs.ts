@@ -1,6 +1,6 @@
 export class Abs{
     id!:Number;
-    cadastro!:Number
-    edicao!:Number
+    cadastro!:Date
+    edicao!:Date
     ativo!:boolean
 }

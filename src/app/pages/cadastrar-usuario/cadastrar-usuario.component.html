@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <body class="w-full bg-slate-50">
     <section class="flex justify-center">
-        
+
         <form class="w-3/4 flex items-center flex-col mt-10 bg-white rounded-lg" (ngSubmit)="adicionarUsuario()">
             <div class="flex justify-center">
                 <p class="underline text-[#064F51] text-4xl flex justify-center mt-14">Cadastrar Usuário</p>
@@ -24,7 +24,7 @@
                 </div>
                 <div>
                     <label for="nascimento" class="block">DATA DE NASCIMENTO</label>
-                    <input type="date" name="dataNacimento" [(ngModel)]="usuario.dataNacimento" placeholder="DD/MM/AA" class="w-96 h-10 rounded-lg border p-4" name="dataNascimento">
+                    <input type="date" name="dataNacimento" [(ngModel)]="usuario.dataNascimento" placeholder="DD/MM/AA" class="w-96 h-10 rounded-lg border p-4" name="dataNascimento">
                 </div>
             </div>
 
@@ -39,17 +39,23 @@
                 </div>
             </div>
 
-            <div class="mb-6 mt-10 flex items-center justify-between">
+            <div class="mb-6 mt-10 flex items-center justify-between gap-20">
 
                 <div>
                     <label for="senha"class="block">SENHA</label>
                     <input type="password" name="senha" [(ngModel)]="usuario.senha" placeholder="Digite sua senha" class="w-96 h-10 rounded-lg border p-4" name="senha">
                 </div>
+
+                <div>
+                  <label for="senha"class="block">Endereco</label>
+                  <input type="text" name="endereco" [(ngModel)]="usuario.endereco" placeholder="Digite seu endereco" class="w-96 h-10 rounded-lg border p-4" name="senha">
+              </div>
             </div>
             <div class="flex mt-14 mb-14">
                 <a href="listar-usuario"><button type="button" class="bg-[#064F51] mr-96 w-32 h-8 rounded-lg text-white">Voltar</button></a>
-                <button type="submit" class="bg-[#064F51] w-32 h-8 rounded-lg text-white" >Cadastrar</button>
+                <button (click)="adicionarUsuario()"class="bg-[#064F51] w-32 h-8 rounded-lg text-white" >Cadastrar</button>
             </div>
+
 
         </form>
     </section>
