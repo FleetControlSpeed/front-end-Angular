@@ -14,6 +14,7 @@ import { ListarVeiculoComponent } from './pages/listar-veiculo/listar-veiculo.co
 import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CadastarModeloComponent } from './pages/cadastar-modelo/cadastar-modelo.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     CadastrarMultaComponent,
     ListarMultasComponent,
     ListarVeiculoComponent,
-    RecuperarSenhaComponent
+    RecuperarSenhaComponent,
+    CadastarModeloComponent
   ],
   imports: [
     BrowserModule,
