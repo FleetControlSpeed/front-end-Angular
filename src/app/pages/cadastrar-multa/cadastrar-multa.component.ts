@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Multa } from 'src/app/model/Multa';
 import { MultaService } from 'src/app/service/Multa/multa.service';
 
@@ -8,12 +8,16 @@ import { MultaService } from 'src/app/service/Multa/multa.service';
   styleUrls: ['./cadastrar-multa.component.css']
 })
 export class CadastrarMultaComponent {
+  @Input()multa:Multa = new Multa();
   @Output() retorno = new EventEmitter<Multa>();
+  usuarios: any[] = [];
 
-  multa:Multa = new Multa();
+  multaService = inject(MultaService)
   
 
-  constructor(private http: HttpClient, private multaService:MultaService){}
+  constructor(){
+
+  }
 
 
 
