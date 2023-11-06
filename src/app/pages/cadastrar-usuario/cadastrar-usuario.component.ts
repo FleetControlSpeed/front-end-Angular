@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Usuario } from 'src/app/model/Usuario';
 import { UsuarioService } from 'src/app/service/Usuario/usuario.service';
 
@@ -9,18 +9,27 @@ import { UsuarioService } from 'src/app/service/Usuario/usuario.service';
   styleUrls: ['./cadastrar-usuario.component.css']
 })
 export class CadastrarUsuarioComponent {
-  usuario:Usuario = new Usuario();
+  @Input() usuario: Usuario = new Usuario();
+  @Output() retorno = new EventEmitter<Usuario>();
 
-  constructor(private http: HttpClient, private usuarioService:UsuarioService){}
+  userService = inject(UsuarioService);
+
+  constructor(){}
 
   adicionarUsuario(){
-    this.usuarioService.adicionar(this.usuario).subscribe(
-      (response)=>{
-        console.log('Usuario Cadastrado com sucesso', response)
+   
+    this.userService.adicionar(this.usuario).subscribe({
+      next: (usuario) => {
+        this.retorno.emit(usuario);
+        alert('Cadastrado com sucesso!');
+
       },
-      (error) => {
-        console.error('Erro ao cadastrar usuário', error);
-      }
-    )
+      error: (erro) => {
+        alert(
+          'Algum erro está acontecendo , por favor de um refresh na pagina!'
+        );
+        console.error(erro);
+      },
+    });
   }
 }

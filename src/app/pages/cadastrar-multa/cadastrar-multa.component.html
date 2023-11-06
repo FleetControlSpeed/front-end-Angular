@@ -22,10 +22,14 @@
                     <label for="data-multa" class="block">DATA DA MULTA</label>
                     <input type="date" placeholder="DD/MM/AA" class="w-96 h-10 rounded-lg border p-4">
                 </div>
-                <div>
-                    <label for="nascimento" class="block">ANEXO</label>
-                    <input type="file" placeholder="Anexo da multa" class="w-96 h-10 rounded-lg border p-1">
+
+                <div class="mr-14">
+                    <label for="usuarios" class="block">Usuarios</label>
+                    <select class="w-96 h-10 rounded-lg border p-4">
+                        <option value=""></option>
+                    </select>
                 </div>
+                
             </div>
 
             <div class="mb-6 mt-10 flex items-center justify-between">
@@ -38,7 +42,7 @@
 
             <div class="flex mt-14 mb-14">
                 <a href="/lista-multa"> <button  type="button" class="bg-[#064F51] mr-96 w-32 h-8 rounded-lg text-white">Voltar</button></a>
-                <button type="button" class="bg-[#064F51] w-32 h-8 rounded-lg text-white">Cadastrar</button>
+                <button type="button" class="bg-[#064F51] w-32 h-8 rounded-lg text-white" (click)="adicionarMulta()">Cadastrar</button>
             </div>
 
         </form>
