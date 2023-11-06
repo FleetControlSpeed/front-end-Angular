@@ -17,9 +17,10 @@ export class CadastrarUsuarioComponent {
   constructor(){}
 
   adicionarUsuario(){
-   
+    this.usuario.cargo = 'MOTORISTA'
     this.userService.adicionar(this.usuario).subscribe({
       next: (usuario) => {
+  
         this.retorno.emit(usuario);
         alert('Cadastrado com sucesso!');
 
