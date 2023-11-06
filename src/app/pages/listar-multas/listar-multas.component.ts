@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Multa } from 'src/app/model/Multa';
+import { Usuario } from 'src/app/model/Usuario';
 import { MultaService } from 'src/app/service/Multa/multa.service';
+import { UsuarioService } from 'src/app/service/Usuario/usuario.service';
 
 @Component({
   selector: 'app-listar-multas',
@@ -10,8 +12,16 @@ import { MultaService } from 'src/app/service/Multa/multa.service';
 export class ListarMultasComponent {
   multas:Multa[] = [];
 
-  constructor(private multaService : MultaService){
+
+  @Input() multa: Multa = new Multa();
+  @Output() retorno = new EventEmitter<Multa>();
+
+  multaService = inject(MultaService);
+
+
+  constructor(){
     this.listaMultas();
+
   }
   listaMultas(){
     this.multaService.listar().subscribe(
@@ -24,5 +34,6 @@ export class ListarMultasComponent {
       }
     )
   }
+
 
 }

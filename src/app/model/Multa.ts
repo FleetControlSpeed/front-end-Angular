@@ -10,5 +10,9 @@ export class Multa extends Abs{
    dataMulta!:Number
    usuario!:Usuario
 
+   constructor(){
+    super()
+   }
+
 
 }

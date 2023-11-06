@@ -10,15 +10,14 @@
             + Cadastrar multa
           </button>
         </a>
-     
+
     </section>
 
     <section class="w-full flex items-center">
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs dark:text-gray-400">
           <tr>
-            <th scope="col" class="px-6 py-3">ID</th>
-            <th scope="col" class="px-6 py-3">NOME</th>
+
             <th scope="col" class="px-6 py-3">VALOR</th>
             <th scope="col" class="px-6 py-3">TIPO</th>
             <th scope="col" class="px-6 py-3">DATA DA MULTA</th>
@@ -28,13 +27,8 @@
 
         <tbody>
           <tr class="dark:border-gray-700" *ngFor="let multa of multas">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black"
-            >
-              {{multa.id}}
-            </th>
-            <td class="px-6 dark:text-black py-4">{{multa.usuario.primeiroNome}} {{multa.usuario.sobrenome}} </td>
+
+
             <td class="px-6 dark:text-black py-4">R$ {{multa.valor.toFixed(2) }} </td>
             <td class="px-6 dark:text-black py-4">{{multa.tipoMulta}} </td>
             <td class="px-6 dark:text-black py-4">{{multa.dataMulta}}</td>
