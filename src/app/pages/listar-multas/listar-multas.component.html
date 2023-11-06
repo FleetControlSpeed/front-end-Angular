@@ -27,23 +27,28 @@
         </thead>
 
         <tbody>
-          <tr class="dark:border-gray-700">
+          <tr class="dark:border-gray-700" *ngFor="let multa of multas">
             <th
               scope="row"
               class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black"
             >
-              1
+              {{multa.id}}
             </th>
-            <td class="px-6 dark:text-black py-4">Gabriele Steinmetz</td>
-            <td class="px-6 dark:text-black py-4">R$ 100,00</td>
-            <td class="px-6 dark:text-black py-4">Velocidade</td>
-            <td class="px-6 dark:text-black py-4">11/11/2020</td>
+            <td class="px-6 dark:text-black py-4">{{multa.usuario.primeiroNome}} {{multa.usuario.sobrenome}} </td>
+            <td class="px-6 dark:text-black py-4">R$ {{multa.valor.toFixed(2) }} </td>
+            <td class="px-6 dark:text-black py-4">{{multa.tipoMulta}} </td>
+            <td class="px-6 dark:text-black py-4">{{multa.dataMulta}}</td>
             <td class="px-6 dark:text-black py-4">
               <a
                 href="#"
                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                ><button class="bg-transparent hover:bg-[#348789] text-[#064F51] font-semibold hover:text-white py-2 px-4 border border-[#064F51] hover:border-transparent rounded">
-                    Ativo
+                ><button
+                  [ngClass]="{
+                    'btn-ativo': multa.ativo,
+                    'btn-inativo': !multa.ativo
+                  }"
+                class="bg-transparent text-[#064F51] font-semibold py-2 px-4 border border-[#064F51]  rounded">
+                    {{multa.ativo}}
                   </button></a
               >
             </td>
