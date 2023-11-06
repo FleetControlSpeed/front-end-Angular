@@ -9,49 +9,49 @@
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="nome" class="block">NOME</label>
-                    <input type="text" [(ngModel)]="usuario.primeiroNome" placeholder="Digite Seu nome" class="w-96 h-10 rounded-lg border p-4" name="primeiroNome">
+                    <input type="text" name="primeiroNome" [(ngModel)]="usuario.primeiroNome" placeholder="Digite Seu nome" class="w-96 h-10 rounded-lg border p-4" name="primeiroNome">
                 </div>
                 <div>
                     <label for="sobrenome" class="block">SOBRENOME</label>
-                    <input type="text" [(ngModel)]="usuario.sobrenome" placeholder="Digite seu sobrenome" class="w-96 h-10 rounded-lg border p-4" name="sobrenome">
+                    <input type="text" name="sobrenome" [(ngModel)]="usuario.sobrenome" placeholder="Digite seu sobrenome" class="w-96 h-10 rounded-lg border p-4" name="sobrenome">
                 </div>
             </div>
 
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="CPF" class="block">CPF</label>
-                    <input type="text" [(ngModel)]="usuario.cpf" placeholder="Digite seu CPF" class="w-96 h-10 rounded-lg border p-4" name="cpf">
+                    <input type="text" name="cpf" [(ngModel)]="usuario.cpf" placeholder="Digite seu CPF" class="w-96 h-10 rounded-lg border p-4" name="cpf">
                 </div>
                 <div>
                     <label for="nascimento" class="block">DATA DE NASCIMENTO</label>
-                    <input type="date" [(ngModel)]="usuario.dataNacimento" placeholder="DD/MM/AA" class="w-96 h-10 rounded-lg border p-4" name="dataNascimento">
+                    <input type="date" name="dataNacimento" [(ngModel)]="usuario.dataNacimento" placeholder="DD/MM/AA" class="w-96 h-10 rounded-lg border p-4" name="dataNascimento">
                 </div>
             </div>
 
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="telefone"class="block">CEL</label>
-                    <input type="tel" [(ngModel)]="usuario.telefone" placeholder="XX X XXXX-XXXX" class="w-96 h-10 rounded-lg border p-4" name="telefone">
+                    <input type="tel" name="telefone" [(ngModel)]="usuario.telefone" placeholder="XX X XXXX-XXXX" class="w-96 h-10 rounded-lg border p-4" name="telefone">
                 </div>
                 <div>
                     <label for="CNH"class="block">CNH</label>
-                    <input type="text" [(ngModel)]="usuario.cnh" placeholder="Digite sua CNH" class="w-96 h-10 rounded-lg border p-4" name="cnh">
+                    <input type="text" name="cnh" [(ngModel)]="usuario.cnh" placeholder="Digite sua CNH" class="w-96 h-10 rounded-lg border p-4" name="cnh">
                 </div>
             </div>
 
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="EMAIL"class="block">EMAIL</label>
-                    <input type="email" [(ngModel)]="usuario.email" placeholder="Digite seu email" class="w-96 h-10 rounded-lg border p-4" name="email">
+                    <input type="email" name="email" [(ngModel)]="usuario.email" placeholder="Digite seu email" class="w-96 h-10 rounded-lg border p-4" name="email">
                 </div>
                 <div>
                     <label for="senha"class="block">SENHA</label>
-                    <input type="password" [(ngModel)]="usuario.senha" placeholder="Digite sua senha" class="w-96 h-10 rounded-lg border p-4" name="senha">
+                    <input type="password" name="senha" [(ngModel)]="usuario.senha" placeholder="Digite sua senha" class="w-96 h-10 rounded-lg border p-4" name="senha">
                 </div>
             </div>
             <div class="flex mt-14 mb-14">
                 <a href="listar-usuario"><button type="button" class="bg-[#064F51] mr-96 w-32 h-8 rounded-lg text-white">Voltar</button></a>
-                <button (click)="adicionarUsuario()" class="bg-[#064F51] w-32 h-8 rounded-lg text-white" >Cadastrar</button>
+                <button type="submit" class="bg-[#064F51] w-32 h-8 rounded-lg text-white" >Cadastrar</button>
             </div>
 
         </form>

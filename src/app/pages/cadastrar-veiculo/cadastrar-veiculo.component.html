@@ -2,18 +2,18 @@
 <body class="w-full bg-slate-50">
     <section class="flex justify-center">
         
-        <form class="w-3/4 flex items-center flex-col mt-10 bg-white rounded-lg">
+        <form (ngSubmit)="adicionarVeiculo" class="w-3/4 flex items-center flex-col mt-10 bg-white rounded-lg">
             <div class="flex justify-center">
                 <p class="underline text-[#064F51] text-4xl flex justify-center mt-14">Cadastro de Veiculos</p>
             </div>
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="modelo" class="block">MODELO</label>
-                    <input type="text" placeholder="Digite o modelo do veiculo" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="text" name="modelo.nome" [(ngModel)]="veiculo.modelo.nome" placeholder="Digite o modelo do veiculo" class="w-96 h-10 rounded-lg border p-4">
                 </div>
                 <div>
                     <label for="marca" class="block">MARCA</label>
-                    <input type="text" placeholder="Digite a marca do veiculo" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="text" name="modelo.marca" [(ngModel)]="veiculo.modelo.marca" placeholder="Digite a marca do veiculo" class="w-96 h-10 rounded-lg border p-4">
                 </div>
             </div>
 
