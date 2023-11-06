@@ -2,7 +2,6 @@ import { Abs } from "./Abs"
 
 
 export class Usuario extends Abs{
-
    email!:String
    usuario!:String
    senha!:String

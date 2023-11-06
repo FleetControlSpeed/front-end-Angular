@@ -1,0 +1,9 @@
+.btn-ativo {
+    background-color: #64dd17;
+    color: #fff;
+  }
+  
+  .btn-inativo {
+    background-color: #ff1744; 
+    color: #fff;
+  }

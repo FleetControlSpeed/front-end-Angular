@@ -27,22 +27,27 @@
         </thead>
 
         <tbody>
-          <tr class="dark:border-gray-700">
+          <tr class="dark:border-gray-700" *ngFor="let usuario of usuarios">
             <th
               scope="row"
               class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black"
             >
-              1
+             {{ usuario.id}}
             </th>
-            <td class="px-6 dark:text-black py-4">Gabriele Steinmetz</td>
-            <td class="px-6 dark:text-black py-4">19/01/2001</td>
-            <td class="px-6 dark:text-black py-4">083.665.669-39</td>
+            <td class="px-6 dark:text-black py-4">{{usuario.primeiroNome}} {{usuario.sobrenome}} </td>
+            <td class="px-6 dark:text-black py-4">{{usuario.dataNacimento}} </td>
+            <td class="px-6 dark:text-black py-4"> {{usuario.cpf}} </td>
             <td class="px-6 dark:text-black py-4">
               <a
                 href="#"
                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                ><button class="bg-transparent hover:bg-[#348789] text-[#064F51] font-semibold hover:text-white py-2 px-4 border border-[#064F51] hover:border-transparent rounded">
-                    Ativo
+                ><button 
+                  [ngClass]="{
+                    'btn-ativo': usuario.ativo,
+                    'btn-inativo': !usuario.ativo
+                }"
+                 class="bg-transparent  text-[#064F51] font-semibold py-2 px-4 border border-[#064F51]  rounded">
+                    {{usuario.ativo}}
                   </button></a
               >
             </td>
