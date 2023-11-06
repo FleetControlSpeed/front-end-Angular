@@ -9,6 +9,8 @@ import { UsuarioService } from 'src/app/service/Usuario/usuario.service';
 })
 export class ListarUsuarioComponent {
   usuarios:Usuario[] = [];
+  usuarioEmEdicao:any | null = null;
+  editMode:boolean[]=[];
 
   constructor(private usuarioService: UsuarioService){
     this.listar();
@@ -24,5 +26,18 @@ export class ListarUsuarioComponent {
       }
     })
   }
+    editarItem(index:number ) {
+      this.usuarioEmEdicao = {...this.usuarios[index] };
+      this.editMode[index] = true;
+    }
+    salvarEdicao(index:number) {
+      this.usuarios[index] = { ...this.usuarioEmEdicao };
+      this.editMode[index] = false;
+      this.usuarioEmEdicao = null;
+    }
+    cancelarEdicao(index: number) {
+      this.editMode[index] = false;
+      this.usuarioEmEdicao = null;
+    }
 
 }

@@ -22,20 +22,22 @@
             <th scope="col" class="px-6 py-3">DATA DE NASCIMENTO</th>
             <th scope="col" class="px-6 py-3">CPF</th>
             <th scope="col" class="px-6 py-3">STATUS</th>
+            <th scope="col" class="px-6 py-3">EDITAR</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr class="dark:border-gray-700" *ngFor="let usuario of usuarios">
-            <th
+          <ng-container *ngFor="let usuario of usuarios; let i = index">
+          <tr class="dark:border-gray-700" *ngIf="!editMode[i]">
+            <th *ngIf="!editMode[i]"
               scope="row"
               class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black"
             >
              {{ usuario.id}}
             </th>
-            <td class="px-6 dark:text-black py-4">{{usuario.primeiroNome}} {{usuario.sobrenome}} </td>
-            <td class="px-6 dark:text-black py-4">{{usuario.dataNacimento}} </td>
-            <td class="px-6 dark:text-black py-4"> {{usuario.cpf}} </td>
+            <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]">{{usuario.primeiroNome}} {{usuario.sobrenome}} </td>
+            <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]">{{usuario.dataNacimento}} </td>
+            <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]"> {{usuario.cpf}} </td>
             <td class="px-6 dark:text-black py-4">
               <a
                 href="#"
@@ -50,7 +52,22 @@
                   </button></a
               >
             </td>
+            <td class="px-6 dark:text-black py-4">
+              <button (click)="editarItem" type="submit">EDITAR</button>
+            </td>
           </tr>
+          <tr *ngIf="editMode[i]">
+            <td><input [(ngModel)]="usuarioEmEdicao.primeiroNome" placeholder="Nome"></td>
+            <td><input [(ngModel)]="usuarioEmEdicao.sobrenome" placeholder="Nome"></td>
+            <td><input [(ngModel)]="usuarioEmEdicao.dataNacimento" placeholder="Nome"></td>
+            <td><input [(ngModel)]="usuarioEmEdicao.cpf" placeholder="Ano"></td>
+            <td>
+              <button (click)="salvarEdicao(i)" class="btn btn-success">Salvar</button>
+              <button (click)="salvarEdicao(i)" class="btn btn-success">Desativar</button>
+              <button (click)="cancelarEdicao(i)" class="btn btn-danger">Cancelar</button>
+            </td>
+          </tr>
+        </ng-container>
         </tbody>
       </table>
     </section>
