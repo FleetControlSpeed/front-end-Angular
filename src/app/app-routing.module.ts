@@ -22,8 +22,8 @@ const routes: Routes = [
   {path:"cadastar-modelo",component:CadastarModeloComponent},
   
   {path:"listar-usuario",component: ListarUsuarioComponent},
-  {path:"lista-multa", component:ListarMultasComponent},
-  {path:"lista-veiculo",component:ListarVeiculoComponent},
+  {path:"listar-multa", component:ListarMultasComponent},
+  {path:"listar-veiculo",component:ListarVeiculoComponent},
   {path:"recuperar-senha",component:RecuperarSenhaComponent}
 ];
 
