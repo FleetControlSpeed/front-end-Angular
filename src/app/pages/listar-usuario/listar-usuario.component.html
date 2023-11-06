@@ -10,7 +10,7 @@
             + Cadastrar Usuário
           </button>
         </a>
-     
+
     </section>
 
     <section class="w-full flex items-center">
@@ -35,14 +35,16 @@
             >
              {{ usuario.id}}
             </th>
+
             <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]">{{usuario.primeiroNome}} {{usuario.sobrenome}} </td>
             <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]">{{usuario.dataNascimento}} </td>
             <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]"> {{usuario.cpf}} </td>
+            
             <td class="px-6 dark:text-black py-4">
               <a
                 href="#"
                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                ><button 
+                ><button
                   [ngClass]="{
                     'btn-ativo': usuario.ativo,
                     'btn-inativo': !usuario.ativo

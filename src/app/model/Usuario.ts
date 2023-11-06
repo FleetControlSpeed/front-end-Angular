@@ -11,7 +11,8 @@ export class Usuario extends Abs{
    cpf!:String
    telefone!:String
    dataNascimento!:String
-   
+   endereco!: String
+
 
    constructor(){
       super()
