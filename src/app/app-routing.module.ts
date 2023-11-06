@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CadastrarVeiculoComponent } from './pages/cadastrar-veiculo/cadastrar-veiculo.component';
 import { CadastrarMultaComponent } from './pages/cadastrar-multa/cadastrar-multa.component';
 import { ListarMultasComponent } from './pages/listar-multas/listar-multas.component';
+import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,9 @@ const routes: Routes = [
   {path:"cadastrar-usuario", component: CadastrarUsuarioComponent},
   {path:"cadastrar-veiculo", component:CadastrarVeiculoComponent},
   {path:"cadastrar-multa",component:CadastrarMultaComponent},
-  {path:"lista-multa", component:ListarMultasComponent}
+  {path:"lista-multa", component:ListarMultasComponent},
+  {path:"recuperar-senha",component:RecuperarSenhaComponent}
+
 ];
 
 @NgModule({
