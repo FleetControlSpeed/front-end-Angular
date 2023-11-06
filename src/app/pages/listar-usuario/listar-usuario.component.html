@@ -17,7 +17,7 @@
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs dark:text-gray-400">
           <tr>
-            <th scope="col" class="px-6 py-3">ID</th>
+
             <th scope="col" class="px-6 py-3">NOME</th>
             <th scope="col" class="px-6 py-3">DATA DE NASCIMENTO</th>
             <th scope="col" class="px-6 py-3">CPF</th>
@@ -29,17 +29,12 @@
         <tbody>
           <ng-container *ngFor="let usuario of usuarios; let i = index">
           <tr class="dark:border-gray-700" *ngIf="!editMode[i]">
-            <th *ngIf="!editMode[i]"
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black"
-            >
-             {{ usuario.id}}
-            </th>
+
 
             <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]">{{usuario.primeiroNome}} {{usuario.sobrenome}} </td>
             <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]">{{usuario.dataNascimento}} </td>
             <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]"> {{usuario.cpf}} </td>
-            
+
             <td class="px-6 dark:text-black py-4">
               <a
                 href="#"

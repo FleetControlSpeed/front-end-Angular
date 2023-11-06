@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
 import { UsuarioService } from 'src/app/service/Usuario/usuario.service';
 
@@ -13,6 +14,7 @@ export class CadastrarUsuarioComponent {
   @Output() retorno = new EventEmitter<Usuario>();
 
   userService = inject(UsuarioService);
+  router = inject(Router);
 
   constructor(){}
 
@@ -22,16 +24,20 @@ export class CadastrarUsuarioComponent {
     this.userService.adicionar(this.usuario).subscribe({
       next: (usuario) => {
 
-        this.retorno.emit(usuario);
+
         alert('Cadastrado com sucesso!');
+        this.retorno.emit(usuario);
+        this.router.navigate(['app-listar-usuario'])
 
       },
       error: (erro) => {
         alert(
           'Algum erro está acontecendo , por favor de um refresh na pagina!'
         );
+        this.router.navigate(['app-listar-usuario'])
         console.error(erro);
       },
     });
+
   }
 }

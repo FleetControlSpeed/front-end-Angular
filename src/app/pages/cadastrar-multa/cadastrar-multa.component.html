@@ -1,8 +1,8 @@
 <app-nav></app-nav>
 <body class="w-full bg-slate-50">
     <section class="flex justify-center">
-        
-        <form (ngSubmit)="salvar()" class="w-3/4 flex items-center flex-col mt-10 bg-white rounded-lg">
+
+        <form (ngSubmit)="salvarMulta()" class="w-3/4 flex items-center flex-col mt-10 bg-white rounded-lg">
             <div class="flex justify-center">
                 <p class="underline text-[#064F51] text-4xl flex justify-center mt-14">Cadastrar multa</p>
             </div>
@@ -25,16 +25,16 @@
 
                 <div class="mr-14">
                     <label for="usuarios" class="block">Usuarios</label>
-                    <select class="w-96 h-10 rounded-lg border p-4">
-                        <option *ngFor="let user of usuarios" value="user.id">{{user.name}}</option>
+                    <select class="w-96 h-14 rounded-lg border p-4">
+                        <option *ngFor="let user of usuarios" value="user.id">Nome: {{user.primeiroNome}} - CPF: {{user.cpf}}</option>
                     </select>
                 </div>
-                
+
             </div>
 
             <div class="flex mt-14 mb-14">
                 <a href="/lista-multa"> <button  type="button" class="bg-[#064F51] mr-96 w-32 h-8 rounded-lg text-white">Voltar</button></a>
-                <button type="submit" class="bg-[#064F51] w-32 h-8 rounded-lg text-white">Cadastrar</button>
+                <button (click)="salvarMulta()" class="bg-[#064F51] w-32 h-8 rounded-lg text-white">Cadastrar</button>
             </div>
 
         </form>
