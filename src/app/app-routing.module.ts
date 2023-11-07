@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:"cadastrar-usuario", component: CadastrarUsuarioComponent},
   {path:"cadastrar-veiculo", component:CadastrarVeiculoComponent},
   {path:"cadastrar-multa",component:CadastrarMultaComponent},
-  {path:"cadastar-modelo",component:CadastarModeloComponent},
+  {path:"cadastrar-modelo",component:CadastarModeloComponent},
 
   {path:"listar-usuario",component: ListarUsuarioComponent},
   {path:"listar-multa", component:ListarMultasComponent},

@@ -1,15 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Empresa } from 'src/app/model/Empresa';
+import { Modelo } from 'src/app/model/Modelo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ModeloService {
-  private baseUrl = 'http://localhost:8080/api/modelo'; 
+  private baseUrl = 'http://localhost:8080/api/modelo';
+  http = inject(HttpClient)
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   listar(): Observable<any[]> {
     const url = `${this.baseUrl}/listar`;
@@ -25,9 +27,9 @@ export class ModeloService {
     return this.http.get<any>(url);
   }
 
-  adicionar(Modelo: any): Observable<any> {
+  adicionar(modelo: Modelo): Observable<Modelo> {
     const url = `${this.baseUrl}/cadastrar`;
-    return this.http.post(url, Modelo);
+    return this.http.post<Modelo>(url, modelo);
   }
 
   atualizar(id: number, Modelo: any): Observable<any> {

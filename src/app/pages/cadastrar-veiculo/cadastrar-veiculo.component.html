@@ -9,33 +9,33 @@
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="modelo" class="block">MODELO</label>
-                    <input type="text" name="modelo.nome" [(ngModel)]="veiculo.modelo.nome" placeholder="Digite o modelo do veiculo" class="w-96 h-10 rounded-lg border p-4">
+                    <select  class="w-96 h-14 rounded-lg border p-4"[(ngModel)]="veiculo.modelo" name="modelo">
+                      <option *ngFor="let modelo of modelos" [ngValue]="modelo.id">Nome: {{modelo.nome}} - Marca: {{modelo.marca}}</option>
+                      <!-- <option *ngFor="let user of usuarios" value="user.id">Nome: {{user.primeiroNome}} - CPF: {{user.cpf}}</option> -->
+                    </select>
                 </div>
-                <div>
-                    <label for="marca" class="block">MARCA</label>
-                    <input type="text" name="modelo.marca" [(ngModel)]="veiculo.modelo.marca" placeholder="Digite a marca do veiculo" class="w-96 h-10 rounded-lg border p-4">
-                </div>
+
             </div>
 
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="placa" class="block">PLACA</label>
-                    <input type="text" placeholder="Digite a placa do veiculo" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="text" placeholder="Digite a placa do veiculo" class="w-96 h-10 rounded-lg border p-4" [(ngModel)]="veiculo.placa" name="placa">
                 </div>
                 <div>
                     <label for="ano" class="block">ANO</label>
-                    <input type="text" placeholder="Ano de fabricação" class="w-96 h-10 rounded-lg border p-4">
+                    <input type="text" placeholder="Ano de fabricação" class="w-96 h-10 rounded-lg border p-4" [(ngModel)]="veiculo.ano" name="ano">
                 </div>
             </div>
 
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
-                    <label for="quilometragem"class="block">QUILOMETRAGEM</label>
-                    <input type="text" placeholder="km" class="w-96 h-10 rounded-lg border p-4">
+                    <label for="quilometragem"class="block" >QUILOMETRAGEM</label>
+                    <input type="text" placeholder="km" class="w-96 h-10 rounded-lg border p-4" [(ngModel)]="veiculo.km" name="km">
                 </div>
                 <div>
                     <label for="cor"class="block">Cor</label>
-                    <select  value="cor"class="w-96 h-13 rounded-lg border p-4">
+                    <select  value="cor"class="w-96 h-13 rounded-lg border p-4" [(ngModel)]="veiculo.cor" name="cor">
                         <option value="0">Escolha</option>
                         <option value="AMARELO">AMARELO</option>
                         <option value="BEGE">BEGE</option>
@@ -53,8 +53,8 @@
 
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
-                    <label for="Tipo"class="block">Tipo</label>
-                    <select class="w-52 h-14 rounded-lg border p-4">
+                    <label for="Tipo"class="block" >Tipo</label>
+                    <select class="w-52 h-14 rounded-lg border p-4" [(ngModel)]="veiculo.tipo" name="tipo">
                         <option value="0">Escolha</option>
                         <option value="CARRO">CARRO</option>
                         <option value="VAN">VAN</option>
@@ -65,8 +65,8 @@
 
             </div>
             <div class="flex mt-14 mb-14">
-               <a href="listar-veiculo"><button type="button" class="bg-[#064F51] mr-96 w-32 h-8 rounded-lg text-white">Voltar</button></a>
-                <button type="button" class="bg-[#064F51] w-32 h-8 rounded-lg text-white" (click)="adicionarVeiculo()">Cadastrar</button>
+               <a href="/listar-veiculo"><button type="button" class="bg-[#064F51] mr-96 w-32 h-8 rounded-lg text-white">Voltar</button></a>
+                <button (click)="adicionarVeiculo()" type="button" class="bg-[#064F51] w-32 h-8 rounded-lg text-white" >Cadastrar</button>
             </div>
 
         </form>
