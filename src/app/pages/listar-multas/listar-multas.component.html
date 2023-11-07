@@ -26,13 +26,14 @@
         </thead>
 
         <tbody>
-          <tr class="dark:border-gray-700" *ngFor="let multa of multas">
+        <ng-container *ngFor="let multa of multas let i = index">
+          <tr class="dark:border-gray-700" >
 
 
-            <td class="px-6 dark:text-black py-4">R$ {{multa.valor.toFixed(2) }} </td>
-            <td class="px-6 dark:text-black py-4">{{multa.tipoMulta}} </td>
-            <td class="px-6 dark:text-black py-4">{{multa.dataMulta}}</td>
-            <td class="px-6 dark:text-black py-4">
+            <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]">R$ {{multa.valor.toFixed(2) }} </td>
+            <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]">{{multa.tipoMulta}} </td>
+            <td class="px-6 dark:text-black py-4" >{{multa.dataMulta}}</td>
+            <td class="px-6 dark:text-black py-4" *ngIf="!editMode[i]">
               <a
                 href="#"
                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
@@ -47,6 +48,17 @@
               >
             </td>
           </tr>
+          <tr *ngIf="editMode[i]">
+            <td><input [(ngModel)]="multaEmEdicao.modelo" placeholder="Nome" class="border border-solid border-black text-black "></td>
+            <td><input [(ngModel)]="multaEmEdicao.placa" placeholder="Data de nascimento" class="border border-solid border-black text-black "></td>
+            <td><input [(ngModel)]="multaEmEdicao.ano" placeholder="Ano" class="border border-solid border-black text-black "></td>
+            <td><input [(ngModel)]="multaEmEdicao.edicao" placeholder="Ano" class="border border-solid border-black text-black "></td>
+            <td>
+              <button (click)="salvarEdicao(i)" class="bg-green-300 mr-2">✅</button>
+              <button (click)="cancelarEdicao(i)" class="bg-red-300">❌</button>
+            </td>
+          </tr>
+        </ng-container>
         </tbody>
       </table>
     </section>
