@@ -2,16 +2,15 @@
 <body class="w-full bg-slate-50">
     <section class="flex justify-center">
 
-        <form (ngSubmit)="adicionarVeiculo" class="w-3/4 flex items-center flex-col mt-10 bg-white rounded-lg">
+        <form (ngSubmit)="adicionarVeiculo()" class="w-3/4 flex items-center flex-col mt-10 bg-white rounded-lg">
             <div class="flex justify-center">
                 <p class="underline text-[#064F51] text-4xl flex justify-center mt-14">Cadastro de Veiculos</p>
             </div>
             <div class="mb-6 mt-10 flex items-center justify-between">
                 <div class="mr-14">
                     <label for="modelo" class="block">MODELO</label>
-                    <select  class="w-96 h-14 rounded-lg border p-4"[(ngModel)]="veiculo.modelo" name="modelo">
+                    <select [(ngModel)]="veiculo.modelo" name="modelo">
                       <option *ngFor="let modelo of modelos" [ngValue]="modelo.id">Nome: {{modelo.nome}} - Marca: {{modelo.marca}}</option>
-                      <!-- <option *ngFor="let user of usuarios" value="user.id">Nome: {{user.primeiroNome}} - CPF: {{user.cpf}}</option> -->
                     </select>
                 </div>
 
