@@ -9,6 +9,8 @@ import { VeiculoService } from 'src/app/service/Veiculo/veiculo.service';
 })
 export class ListarVeiculoComponent {
   veiculo : Veiculo[] = [];
+  veiculoEmEdicao:any | null = null;
+  editMode:boolean[]=[];
 
   constructor(private veiculoService:VeiculoService){
     this.listarVeiculos();
@@ -24,5 +26,19 @@ export class ListarVeiculoComponent {
       }
     )
   }
+  editarItem(index:number ) {
+    this.veiculoEmEdicao = {...this.veiculo[index] };
+    this.editMode[index] = true;
+  }
+  salvarEdicao(index:number) {
+    this.veiculo[index] = { ...this.veiculoEmEdicao };
+    this.editMode[index] = false;
+    this.veiculoEmEdicao = null;
+  }
+  cancelarEdicao(index: number) {
+    this.editMode[index] = false;
+    this.veiculoEmEdicao = null;
+  }
+
   }
 

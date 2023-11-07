@@ -41,8 +41,8 @@
                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                 ><button
                   [ngClass]="{
-                    'btn-ativo': usuario.ativo,
-                    'btn-inativo': !usuario.ativo
+                    'btn-ativo': !usuario.ativo,
+                    'btn-inativo': usuario.ativo
                 }"
                  class="bg-transparent  text-[#064F51] font-semibold py-2 px-4 border border-[#064F51]  rounded">
                     {{usuario.ativo}}
@@ -54,10 +54,13 @@
             </td>
           </tr>
           <tr *ngIf="editMode[i]">
-            <td><input [(ngModel)]="usuarioEmEdicao.primeiroNome" placeholder="Nome"></td>
-            <td><input [(ngModel)]="usuarioEmEdicao.sobrenome" placeholder="Nome"></td>
-            <td><input [(ngModel)]="usuarioEmEdicao.dataNacimento" placeholder="Nome"></td>
-            <td><input [(ngModel)]="usuarioEmEdicao.cpf" placeholder="Ano"></td>
+  <td><input [(ngModel)]="usuarioEmEdicao.cpf" placeholder="Ano"></td>
+
+            <td><input [(ngModel)]="usuarioEmEdicao.primeiroNome" placeholder="Nome" class="border border-solid border-black text-black "></td>
+            <td><input [(ngModel)]="usuarioEmEdicao.dataNascimento" placeholder="Data de nascimento" class="border border-solid border-black text-black "></td>
+            <td><input [(ngModel)]="usuarioEmEdicao.cpf" placeholder="Ano" class="border border-solid border-black text-black "></td>
+            <td><input [(ngModel)]="usuarioEmEdicao.cpf" placeholder="Ano" class="border border-solid border-black text-black "></td>
+
             <td>
               <button (click)="salvarEdicao(i)" class="btn btn-success">Salvar</button>
               <button (click)="salvarEdicao(i)" class="btn btn-success">Desativar</button>
