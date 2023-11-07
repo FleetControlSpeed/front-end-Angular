@@ -39,8 +39,8 @@
                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                 ><button
                   [ngClass]="{
-                    'btn-ativo': multa.ativo,
-                    'btn-inativo': !multa.ativo
+                    'btn-ativo': !multa.ativo,
+                    'btn-inativo': multa.ativo
                   }"
                 class="bg-transparent text-[#064F51] font-semibold py-2 px-4 border border-[#064F51]  rounded">
                     {{multa.ativo}}

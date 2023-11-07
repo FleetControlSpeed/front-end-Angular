@@ -40,8 +40,8 @@
                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                 ><button 
                   [ngClass]="{
-                    'btn-ativo': veiculos.ativo,
-                    'btn-inativo': !veiculos.ativo
+                    'btn-ativo': !veiculos.ativo,
+                    'btn-inativo': veiculos.ativo
                 }"
                  class="bg-transparent  text-[#064F51] font-semibold py-2 px-4 border border-[#064F51]  rounded">
                     {{veiculos.ativo}}
