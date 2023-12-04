@@ -51,22 +51,30 @@
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <a
-              href="/listar-usuario"
-              class="text-white hover:bg-white hover:text-[#064F51] rounded-md px-3 py-2 text-sm font-medium"
-              aria-current="page"
-              >Usuário</a
-            >
-            <a
-              href="/listar-veiculo"
-              class="text-white hover:bg-white hover:text-[#064F51] rounded-md px-3 py-2 text-sm font-medium"
-              >Veículos</a
-            >
-            <a
-              href="/listar-multa"
-              class="text-white hover:bg-white hover:text-[#064F51] rounded-md px-3 py-2 text-sm font-medium"
-              >Multas</a
-            >
+      
+            <ul class="nav">
+
+
+            <li class="nav-item" *ngIf="loginService.hasPermission('ADMIN') ">
+              <a class="nav-link text-black" routerLink="/admin/listar-usuario">Usuário</a>
+            </li>
+
+            <li class="nav-item" *ngIf="loginService.hasPermission('ADMIN') ">
+              <a class="nav-link text-black" routerLink="/admin/listar-veiculo">Veículos</a>
+            </li>
+            <li class="nav-item" *ngIf="loginService.hasPermission('ADMIN') ">
+              <a class="nav-link text-black" routerLink="/admin/listar-multa">Multas</a>
+            </li>
+            <li class="nav-item" *ngIf="loginService.hasPermission('USER')">
+              <a class="nav-link text-black" routerLink="/user/listar-veiculo">Veículos</a>
+    
+              
+            </li>
+
+
+            
+          </ul>
+            
           </div>
         </div>
       </div>

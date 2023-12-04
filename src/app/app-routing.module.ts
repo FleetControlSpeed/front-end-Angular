@@ -10,11 +10,12 @@ import { ListarVeiculoComponent } from './pages/listar-veiculo/listar-veiculo.co
 import { CadastarModeloComponent } from './pages/cadastar-modelo/cadastar-modelo.component';
 import { rotaguardGuard } from './components/auth/login/guards/guards.service';
 import { LoginComponent } from './components/auth/login/login.component';
-
-
+import { IndexComponent } from './components/layout/index/index.component';
 const routes: Routes = [
-  {path:"", component:LoginComponent}, {
-    path: "admin", component: LoginComponent, canActivate: [rotaguardGuard], data: { expectedRole: 'ADMINISTRADOR' }, children: [
+  { path: "", redirectTo: "login", pathMatch: 'full' },
+  { path: "login", component: LoginComponent },
+  {
+    path: "admin", component: IndexComponent, canActivate: [rotaguardGuard], data: { expectedRole: 'ADMIN' }, children: [
       {path:"cadastrar-usuario", component: CadastrarUsuarioComponent},
       {path:"cadastrar-veiculo", component:CadastrarVeiculoComponent},
       {path:"cadastrar-multa",component:CadastrarMultaComponent},
@@ -23,17 +24,17 @@ const routes: Routes = [
       {path:"listar-usuario",component: ListarUsuarioComponent},
       {path:"listar-multa", component:ListarMultasComponent},
       {path:"listar-veiculo",component:ListarVeiculoComponent},
-  
     ],
   },
-
-
-
-  
+  {
+    path: "user", component: IndexComponent, canActivate: [rotaguardGuard], data: { expectedRole: 'USER' }, children: [
+      {path:"listar-veiculo",component:ListarVeiculoComponent},
+    ],
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

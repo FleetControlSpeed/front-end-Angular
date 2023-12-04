@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastarModeloComponent } from './pages/cadastar-modelo/cadastar-modelo.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { IndexComponent } from './components/layout/index/index.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { LoginComponent } from './components/auth/login/login.component';
     CadastrarMultaComponent,
     ListarMultasComponent,
     ListarVeiculoComponent,
-    CadastarModeloComponent
+    CadastarModeloComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,

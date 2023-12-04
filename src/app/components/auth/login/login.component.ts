@@ -70,9 +70,9 @@ export class LoginComponent {
         this.loginService.addToken(user.token);
         const userRole = this.loginService.getUserRole();
         if (userRole === 'ADMIN') {
-          this.router.navigate(['/admin/cliente']);
+          this.router.navigate(['/admin/listar-usuario']);
         } else if (userRole === 'USER') {
-          this.router.navigate(['/user/pedido']);
+          this.router.navigate(['/user/listar-veiculo']);
         } else {
           console.error('Função do usuário desconhecida:', userRole);
         }
