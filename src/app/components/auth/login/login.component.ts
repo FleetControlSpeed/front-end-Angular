@@ -2,7 +2,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/model/Login';
 import { User } from 'src/app/model/User';
-import { Usuario } from 'src/app/model/Usuario';
 import { LoginService } from 'src/app/service/login/login.service';
 
 

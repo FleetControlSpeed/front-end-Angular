@@ -11,7 +11,7 @@ import { CadastrarVeiculoComponent } from './pages/cadastrar-veiculo/cadastrar-v
 import { CadastrarMultaComponent } from './pages/cadastrar-multa/cadastrar-multa.component';
 import { ListarMultasComponent } from './pages/listar-multas/listar-multas.component';
 import { ListarVeiculoComponent } from './pages/listar-veiculo/listar-veiculo.component';
-import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastarModeloComponent } from './pages/cadastar-modelo/cadastar-modelo.component';
@@ -28,7 +28,6 @@ import { LoginComponent } from './components/auth/login/login.component';
     CadastrarMultaComponent,
     ListarMultasComponent,
     ListarVeiculoComponent,
-    RecuperarSenhaComponent,
     CadastarModeloComponent
   ],
   imports: [
@@ -37,7 +36,7 @@ import { LoginComponent } from './components/auth/login/login.component';
     FormsModule,HttpClientModule
     
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

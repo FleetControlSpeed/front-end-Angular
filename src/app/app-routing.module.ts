@@ -6,7 +6,6 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
 import { CadastrarVeiculoComponent } from './pages/cadastrar-veiculo/cadastrar-veiculo.component';
 import { CadastrarMultaComponent } from './pages/cadastrar-multa/cadastrar-multa.component';
 import { ListarMultasComponent } from './pages/listar-multas/listar-multas.component';
-import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
 import { ListarVeiculoComponent } from './pages/listar-veiculo/listar-veiculo.component';
 import { CadastarModeloComponent } from './pages/cadastar-modelo/cadastar-modelo.component';
 import { rotaguardGuard } from './components/auth/login/guards/guards.service';
@@ -24,7 +23,7 @@ const routes: Routes = [
       {path:"listar-usuario",component: ListarUsuarioComponent},
       {path:"listar-multa", component:ListarMultasComponent},
       {path:"listar-veiculo",component:ListarVeiculoComponent},
-      {path:"recuperar-senha",component:RecuperarSenhaComponent}
+  
     ],
   },
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Veiculo } from 'src/app/model/Veiculo';
 import { VeiculoService } from 'src/app/service/Veiculo/veiculo.service';
 
@@ -12,7 +12,9 @@ export class ListarVeiculoComponent {
   veiculoEmEdicao:any | null = null;
   editMode:boolean[]=[];
 
-  constructor(private veiculoService:VeiculoService){
+   constructor(
+    @Inject(VeiculoService) private veiculoService:VeiculoService
+  ) {
     this.listarVeiculos();
   }
   listarVeiculos(){
