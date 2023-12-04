@@ -60,4 +60,43 @@ describe('cadastrarModelo', () => {
     const buttonElement = fixture.debugElement.query(By.css('button:nth-child(2)'));
     expect(buttonElement.nativeElement.textContent).toBe('Enviar');
   });
+  it('deve renderizar o formulário de cadastro de modelo corretamente', () => {
+    const formElement = fixture.debugElement.query(By.css('form')); // Cobre a classe 'form'
+    expect(formElement).toBeTruthy(); // Cobre a existência do elemento
+  
+    // Teste atributos individuais para aumentar cobertura
+    expect(formElement.nativeElement.classList).toContain('w-3/4');
+    expect(formElement.nativeElement.classList).toContain('flex');
+    expect(formElement.nativeElement.classList).toContain('items-center');
+    expect(formElement.nativeElement.classList).toContain('flex-col');
+    expect(formElement.nativeElement.classList).toContain('mt-10');
+    expect(formElement.nativeElement.classList).toContain('bg-white');
+    expect(formElement.nativeElement.classList).toContain('rounded-lg');
+  });
+  
+  // Teste o título separadamente para aumentar cobertura
+  it('deve exibir o título "Cadastrar Modelo"', () => {
+    const titleElement = fixture.debugElement.query(By.css('p.text-4xl')); // Cobre o texto 'Cadastrar Modelo'
+    expect(titleElement.nativeElement.textContent).toBe('Cadastrar Modelo');
+  });
+  // Teste cada campo com seletores precisos para aumentar cobertura
+it('deve conter um campo para o nome do modelo', () => {
+  const labelElement = fixture.debugElement.query(By.css('label[for="modelo"]')); // Cobre atributo 'for'
+  expect(labelElement.nativeElement.textContent).toBe('NOME');
+
+  const inputElement = fixture.debugElement.query(By.css('input#modelo')); // Cobre id 'modelo'
+  expect(inputElement).toBeTruthy();
+  expect(inputElement.nativeElement.placeholder).toBe('Digite o modelo');
+});
+
+// Repete para o campo de marca, aumentando cobertura
+it('deve conter um campo para a marca do modelo', () => {
+  const labelElement = fixture.debugElement.query(By.css('label[for="marca"]'));
+  expect(labelElement.nativeElement.textContent).toBe('MARCA');
+
+  const inputElement = fixture.debugElement.query(By.css('input#marca'));
+  expect(inputElement).toBeTruthy();
+  expect(inputElement.nativeElement.placeholder).toBe('Digite a marca');
+});
+
 });
