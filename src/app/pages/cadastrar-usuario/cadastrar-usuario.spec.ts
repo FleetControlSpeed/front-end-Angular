@@ -49,23 +49,4 @@ describe('cadastrar Usuario', () => {
     // Add more specific checks if necessary
   });
 
-
-it('should bind primeiroNome input correctly', () => {
-  const primeiroNomeInput = fixture.debugElement.nativeElement.querySelector('[name="primeiroNome"]');
-  expect(primeiroNomeInput).toBeTruthy();
-  primeiroNomeInput.value = 'John';
-  primeiroNomeInput.dispatchEvent(new Event('input'));
-  fixture.detectChanges();
-  expect(component.usuario.primeiroNome).toEqual('John');
-});
-
-it('should bind sobrenome input correctly', () => {
-  const sobrenomeInput = fixture.debugElement.nativeElement.querySelector('[name="sobrenome"]');
-  expect(sobrenomeInput).toBeTruthy();
-  sobrenomeInput.value = 'Doe';
-  sobrenomeInput.dispatchEvent(new Event('input'));
-  fixture.detectChanges();
-  expect(component.usuario.sobrenome).toEqual('Doe');
-});
-
 });

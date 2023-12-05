@@ -1,4 +1,8 @@
-<div class="container" id="body">
+<div class="container flex w-full justify-center flex-col items-center" id="body">
+    <div class="flex justify-center flex-col">
+      <img src="../../../assets/login/logo.png">
+      <p class="flex justify-center text-white text-3xl ">BEM VINDO!</p>
+    </div>
     <div class="row">
       <div class="col-lg-4">
         <br>
@@ -6,12 +10,10 @@
       <div class="col-lg-4 ">
         <form id="formId">
           <div class="mb-3" *ngIf="!showRoleInput">
-            <label for="exampleInputText1" class="form-label">Login:</label>
-            <input type="text" class="form-control" name="exampleInputText1" [(ngModel)]="login.username">
+            <input type="text" class="form-control placeholder:text-black rounded-md w-96 h-10 p-4" placeholder="Login" name="exampleInputText1" [(ngModel)]="login.username">
           </div>
           <div class="mb-3" *ngIf="!showRoleInput">
-            <label for="exampleInputPassword1" class="form-label">Senha:</label>
-            <input type="password" class="form-control" name="exampleInputPassword1" [(ngModel)]="login.password">
+            <input type="password" class="form-control placeholder:text-black rounded-md w-96 h-10 p-4" placeholder="Senha" name="exampleInputPassword1" [(ngModel)]="login.password">
           </div>
 
           <div class="mb-3" *ngIf="showRoleInput">
@@ -32,9 +34,11 @@
             </div>
             
           </div>
-          <button type="button" class="btn btn-primary" (click)="logar()" *ngIf="!showRoleInput">Logar</button>
+          
+          <button type="button" class="btn btn-primary bg-[#1ca290]" (click)="logar()" *ngIf="!showRoleInput">Logar</button>
+          <a href="/cadastrar-usuario" (click)="salvar()" class="text-white underline cursor-pointer mt-5">Não possui conta?</a>
           <button type="button" class="btn btn-primary" (click)="salvar()" *ngIf="showRoleInput">Registrar</button>
-          <button type="button" class="btn btn-secondary" (click)="toggleRoleInput()" id="mostrarRole">Mostrar Role</button>
+          <!--<button type="button" class="btn btn bg-[#1ca290]" (click)="toggleRoleInput()" id="mostrarRole">Cargo</button>-->
         </form>
       </div>
       <div class="col-lg-4">

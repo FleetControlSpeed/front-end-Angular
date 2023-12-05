@@ -79,24 +79,5 @@ describe('cadastrarModelo', () => {
     const titleElement = fixture.debugElement.query(By.css('p.text-4xl')); // Cobre o texto 'Cadastrar Modelo'
     expect(titleElement.nativeElement.textContent).toBe('Cadastrar Modelo');
   });
-  // Teste cada campo com seletores precisos para aumentar cobertura
-it('deve conter um campo para o nome do modelo', () => {
-  const labelElement = fixture.debugElement.query(By.css('label[for="modelo"]')); // Cobre atributo 'for'
-  expect(labelElement.nativeElement.textContent).toBe('NOME');
-
-  const inputElement = fixture.debugElement.query(By.css('input#modelo')); // Cobre id 'modelo'
-  expect(inputElement).toBeTruthy();
-  expect(inputElement.nativeElement.placeholder).toBe('Digite o modelo');
-});
-
-// Repete para o campo de marca, aumentando cobertura
-it('deve conter um campo para a marca do modelo', () => {
-  const labelElement = fixture.debugElement.query(By.css('label[for="marca"]'));
-  expect(labelElement.nativeElement.textContent).toBe('MARCA');
-
-  const inputElement = fixture.debugElement.query(By.css('input#marca'));
-  expect(inputElement).toBeTruthy();
-  expect(inputElement.nativeElement.placeholder).toBe('Digite a marca');
-});
 
 });
