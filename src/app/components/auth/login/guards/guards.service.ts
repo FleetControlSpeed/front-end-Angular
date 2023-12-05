@@ -1,30 +1,28 @@
-// rotaguard.guard.ts
-
-import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login/login.service';
 
+@Injectable({
+  providedIn: 'root',
+})
+export class RotaguardGuard implements CanActivate {
 
-export const rotaguardGuard: CanActivateFn = (route, state) => {
+  constructor(private loginService: LoginService, private router: Router) {}
 
-  let loginService = inject(LoginService);
-  let roteador = inject(Router);
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    if (this.loginService.getToken() == null) {
+      this.router.navigate(['/login']);
+      return false;
+    }
 
-  if (loginService.getToken() == null) {
-    roteador.navigate(['/login']);
-    return false;
+    const userRole = this.loginService.getUserRole();
+    const expectedRole = route.data['expectedRole'] as string; // Assegura TypeScript sobre a propriedade 'expectedRole'
+
+    if (userRole !== expectedRole) {
+      this.router.navigate(['/login']);
+      return false;
+    }
+
+    return true;
   }
-
-
-  const userRole = loginService.getUserRole();
-
-
-  const expectedRole = route.data['expectedRole'];
-
-  if (userRole !== expectedRole) {
-    roteador.navigate(['/login']); 
-    return false;
-  }
-
-  return true;
-};
+}

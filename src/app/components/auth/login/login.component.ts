@@ -38,7 +38,7 @@ export class LoginComponent {
 
   salvar() {
     if (!this.user.role) {
-      this.user.role = 'MOTORISTA';
+      this.user.role = 'USER';
     }
 
     this.loginService.adicionar(this.user).subscribe({

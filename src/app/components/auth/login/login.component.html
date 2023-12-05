@@ -1,45 +1,87 @@
-<div class="container" id="body">
-    <div class="row">
-      <div class="col-lg-4">
-        <br>
-      </div>
-      <div class="col-lg-4 ">
-        <form id="formId">
-          <div class="mb-3" *ngIf="!showRoleInput">
-            <label for="exampleInputText1" class="form-label">Login:</label>
-            <input type="text" class="form-control" name="exampleInputText1" [(ngModel)]="login.username">
-          </div>
-          <div class="mb-3" *ngIf="!showRoleInput">
-            <label for="exampleInputPassword1" class="form-label">Senha:</label>
-            <input type="password" class="form-control" name="exampleInputPassword1" [(ngModel)]="login.password">
-          </div>
+<div class="container vw-100 vh-100" id="body">
+  <div class="row">
+    <div class="col-lg-4">
+      <br />
+    </div>
 
-          <div class="mb-3" *ngIf="showRoleInput">
-            <label for="exampleInputText1" class="form-label">Login:</label>
-            <input type="text" class="form-control" name="exampleInputText1" [(ngModel)]="user.username">
+    <div class="flex items-center justify-center">
+      <img src="../../../../assets/login/logo.png" alt="" />
+    </div>
+    <div class="col-lg-4">
+      <form id="formId">
+        <div class="mb-3" *ngIf="!showRoleInput">
+          <label for="exampleInputText1" class="form-label">Login:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="exampleInputText1"
+            [(ngModel)]="login.username"
+          />
+        </div>
+        <div class="mb-3" *ngIf="!showRoleInput">
+          <label for="exampleInputPassword1" class="form-label">Senha:</label>
+          <input
+            type="password"
+            class="form-control"
+            name="exampleInputPassword1"
+            [(ngModel)]="login.password"
+          />
+        </div>
+
+        <div class="mb-3" *ngIf="showRoleInput">
+          <label for="exampleInputText1" class="form-label">Login:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="exampleInputText1"
+            [(ngModel)]="user.username"
+          />
+        </div>
+        <div class="mb-3 flex flex-col" *ngIf="showRoleInput">
+          <label for="exampleInputPassword1" class="form-label">Senha:</label>
+          <input
+            type="password"
+            class="form-control"
+            name="exampleInputPassword1"
+            [(ngModel)]="user.password"
+          />
+        </div>
+        <div class="mb-3" *ngIf="showRoleInput">
+          <div *ngIf="exibirRoleSelect">
+            <label for="exampleInputRole" class="form-label">Role:</label>
+            <select
+              class="form-select"
+              name="exampleInputRole"
+              [(ngModel)]="user.role"
+            >
+              <option value="ADMINISTRADOR">Admin</option>
+              <option value="MOTORISTA">User</option>
+            </select>
           </div>
-          <div class="mb-3" *ngIf="showRoleInput">
-            <label for="exampleInputPassword1" class="form-label">Senha:</label>
-            <input type="password" class="form-control" name="exampleInputPassword1" [(ngModel)]="user.password">
-          </div>
-          <div class="mb-3" *ngIf="showRoleInput">
-            <div *ngIf="exibirRoleSelect">
-              <label for="exampleInputRole" class="form-label">Role:</label>
-              <select class="form-select" name="exampleInputRole" [(ngModel)]="user.role">
-                <option value="ADMINISTRADOR">Admin</option>
-                <option value="MOTORISTA">User</option>
-              </select>
-            </div>
-            
-          </div>
-          <button type="button" class="btn btn-primary" (click)="logar()" *ngIf="!showRoleInput">Logar</button>
-          <button type="button" class="btn btn-primary" (click)="salvar()" *ngIf="showRoleInput">Registrar</button>
-          <button type="button" class="btn btn-secondary" (click)="toggleRoleInput()" id="mostrarRole">Mostrar Role</button>
-        </form>
-      </div>
-      <div class="col-lg-4">
-        <br>
-      </div>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="logar()"
+          *ngIf="!showRoleInput"
+        >
+          Logar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="salvar()"
+          *ngIf="showRoleInput"
+        >
+          Registrar
+        </button>
+        <button type="button" class="btn" (click)="toggleRoleInput()" id="">
+          Registrar
+        </button>
+      </form>
+    </div>
+    <div class="col-lg-4">
+      <br />
     </div>
   </div>
-  
+</div>

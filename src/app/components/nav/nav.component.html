@@ -51,29 +51,24 @@
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-      
+          
             <ul class="nav">
-
-
-            <li class="nav-item" *ngIf="loginService.hasPermission('ADMIN') ">
-              <a class="nav-link text-black" routerLink="/admin/listar-usuario">Usuário</a>
-            </li>
-
-            <li class="nav-item" *ngIf="loginService.hasPermission('ADMIN') ">
-              <a class="nav-link text-black" routerLink="/admin/listar-veiculo">Veículos</a>
-            </li>
-            <li class="nav-item" *ngIf="loginService.hasPermission('ADMIN') ">
-              <a class="nav-link text-black" routerLink="/admin/listar-multa">Multas</a>
-            </li>
-            <li class="nav-item" *ngIf="loginService.hasPermission('USER')">
-              <a class="nav-link text-black" routerLink="/user/listar-veiculo">Veículos</a>
-    
-              
-            </li>
-
-
-            
-          </ul>
+              <li class="nav-item" *ngIf="loginService.hasPermission('ADMIN') ">
+                <a class="nav-link text-black" routerLink="/admin/listar-usuario">Usuário</a>
+              </li>
+              <li class="nav-item" *ngIf="loginService.hasPermission('ADMIN') ">
+                <a class="nav-link text-black" routerLink="/admin/listar-veiculo">Veículos</a>
+              </li>
+              <li class="nav-item" *ngIf="loginService.hasPermission('ADMIN') ">
+                <a class="nav-link text-black" routerLink="/admin/listar-multa">Multas</a>
+              </li>
+              <li class="nav-item" *ngIf="loginService.hasPermission('ADMIN') ">
+                <a class="nav-link text-black" routerLink="/admin/registro">login</a>
+              </li>
+              <li class="nav-item" *ngIf="loginService.hasPermission('USER')">
+                <a class="nav-link text-black" routerLink="/user/listar-veiculo">Veículos</a>
+              </li>
+            </ul>
             
           </div>
         </div>

@@ -8,14 +8,16 @@ import { CadastrarMultaComponent } from './pages/cadastrar-multa/cadastrar-multa
 import { ListarMultasComponent } from './pages/listar-multas/listar-multas.component';
 import { ListarVeiculoComponent } from './pages/listar-veiculo/listar-veiculo.component';
 import { CadastarModeloComponent } from './pages/cadastar-modelo/cadastar-modelo.component';
-import { rotaguardGuard } from './components/auth/login/guards/guards.service';
+
+import { RotaguardGuard } from './components/auth/login/guards/guards.service';
+
 import { LoginComponent } from './components/auth/login/login.component';
 import { IndexComponent } from './components/layout/index/index.component';
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: 'full' },
   { path: "login", component: LoginComponent },
   {
-    path: "admin", component: IndexComponent, canActivate: [rotaguardGuard], data: { expectedRole: 'ADMIN' }, children: [
+    path: "admin", component: IndexComponent, canActivate: [RotaguardGuard], data: { expectedRole: 'ADMIN' }, children: [
       {path:"cadastrar-usuario", component: CadastrarUsuarioComponent},
       {path:"cadastrar-veiculo", component:CadastrarVeiculoComponent},
       {path:"cadastrar-multa",component:CadastrarMultaComponent},
@@ -24,10 +26,11 @@ const routes: Routes = [
       {path:"listar-usuario",component: ListarUsuarioComponent},
       {path:"listar-multa", component:ListarMultasComponent},
       {path:"listar-veiculo",component:ListarVeiculoComponent},
+      { path: 'registro', component: LoginComponent },
     ],
   },
   {
-    path: "user", component: IndexComponent, canActivate: [rotaguardGuard], data: { expectedRole: 'USER' }, children: [
+    path: "user", component: IndexComponent, canActivate: [RotaguardGuard], data: { expectedRole: 'USER' }, children: [
       {path:"listar-veiculo",component:ListarVeiculoComponent},
     ],
   },
